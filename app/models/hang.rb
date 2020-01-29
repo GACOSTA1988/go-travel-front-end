@@ -1,0 +1,2 @@
+class Hang < ApplicationRecord
+end
