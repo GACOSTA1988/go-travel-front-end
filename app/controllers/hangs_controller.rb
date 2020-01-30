@@ -18,4 +18,17 @@ class HangsController < ApplicationController
     end
   end
 
+  def new_user
+    json = HTTParty.post('http://localhost:3000/user', body: {user: {email: params['email'], password: params['password']}})
+    if json.code == 201
+      redirect_to '/signin'
+    else
+      redirect_to '/signup'
+    end
+  end
+
+  def signup
+    render :new_user
+  end
+
 end
