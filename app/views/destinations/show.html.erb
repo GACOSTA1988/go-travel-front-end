@@ -1,0 +1,13 @@
+<h1>Destination <%= @destination["name"] %></h1>
+<% if @reviews.length > 0  %>
+  <table>
+    <% @reviews.each do |r| %>
+      <tr>
+        <td><%= r['rating'] %></td>
+      <td><%= r['body_text'] %></td>
+      </tr>
+    <% end %>
+  </table>
+  <% else %>
+  <p>no reviews available</p>
+<% end %>

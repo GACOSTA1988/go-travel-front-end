@@ -1,0 +1,12 @@
+<h1>Destinations</h1>
+<% if @destinations.length > 0  %>
+  <table>
+    <% @destinations.each do |d| %>
+      <tr>
+        <td><%= link_to d['name'], "/destinations/#{d['id']}" %></td>
+      </tr>
+    <% end %>
+  </table>
+  <% else %>
+  <p>no stuff</p>
+<% end %>
